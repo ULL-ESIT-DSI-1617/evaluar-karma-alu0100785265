@@ -73,8 +73,14 @@ describe('#Temperatura',function()
       {
           expect(Medida.convertir('10C to F')).to.equal('50 Farenheit');
       });
-     
-      
+      it('10 C to K > 300.00 Kelvin',function()
+      {
+          expect(Medida.convertir('10 C to k')).to.be.above('200.00 Kelvin');
+      });
+      it('10 C to K < 350.00 Kelvin',function()
+      {
+          expect(Medida.convertir('10 C to K')).to.be.below('300.00 Kelvin');
+      });
     });
     describe('Desde Farenheit...',function()
     {
@@ -82,8 +88,14 @@ describe('#Temperatura',function()
       {
           expect(Medida.convertir('20 F to C')).to.equal('-6.666666666666667 Celsius');
       });
-    
-     
+      it('20 F to K > -10.00 Kelvin',function()
+      {
+          expect(Medida.convertir('20 F to k')).to.be.above('-10.00 Kelvin');
+      });
+      it('20 F to K < 350.00 Kelvin',function()
+      {
+          expect(Medida.convertir('20 F to K')).to.be.below('350.00 Kelvin');
+      });
     });
     describe('Desde kelvin...',function()
     {
@@ -91,8 +103,15 @@ describe('#Temperatura',function()
       {
           expect(Medida.convertir('400 K to C')).to.not.equal('0 Celsius');
       });
-      
-      
+      it('400 K to F > -100.00 Farenheit',function()
+      {
+          //expect(Medida.convertir('32 K to F')).to.be.below('-500.00 Farenheit');
+          expect(Medida.convertir('400 K to F')).to.be.above('-100 Farenheit');
+      });
+      it('400 K to F < 350.00 Farenheit',function()
+      {
+          expect(Medida.convertir('400 K to F')).to.be.below('350.00 Farenheit');
+      });
     });
 
     it('Si el destino es igual que la unidad de origen, se devuelve lo mismo como por ejemplo: 32 C to C = 32 c',function()

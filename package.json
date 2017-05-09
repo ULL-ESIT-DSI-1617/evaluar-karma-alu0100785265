@@ -34,7 +34,8 @@
     "mocha": "^2.5.3"
   },
   "scripts": {
-    "test": "mocha",
+   "test": "./node_modules/karma/bin/karma start --single-run --browsers PhantomJS",
+
     "start": "node server.js"
   },
   "repository": {

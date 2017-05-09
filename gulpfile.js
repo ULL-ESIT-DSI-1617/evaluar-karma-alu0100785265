@@ -1,8 +1,8 @@
 var gulp    = require('gulp');
 var karma   = require('gulp-karma');
 
-
- gulp.task('test', function() {
+//Configuración de un task para el Karma.
+gulp.task('test', function() {
   return gulp.src([])
     .pipe(karma({
       configFile: 'karma.conf.js',
@@ -21,3 +21,5 @@ gulp.task('default', function() {
       action: 'watch'
     }));
 });
+
+
